@@ -1,6 +1,7 @@
 ---
 // component import
 import MainHead from "./MainHead.astro";
+import Footer from "../components/Footer.astro";
 
 const {
   title = "My Astro Blog",
@@ -9,10 +10,11 @@ const {
 ---
 
 <html lang="en">
-  <MainHead {title} {description} />
-  <body>
+  <MainHead {title} {description}/>
+  <body class='bg-gray-900 text-white'>
     <main>
       <slot> Default Text</slot>
     </main>
   </body>
+  <Footer />
 </html>
