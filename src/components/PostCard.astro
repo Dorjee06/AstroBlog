@@ -1,0 +1,32 @@
+---
+
+// utils imports
+import { slugify, formatDate } from "../js/utils";
+
+const { frontmatter, url, tagType } = Astro.props;
+
+const Tag = tagType;
+
+const { title, date, author, description, category } = frontmatter;
+---
+
+<article class="card  my-12 flex flex-col items-center gap-2 my-5 w-3/4">
+  <small>
+    <a href={`/category/${slugify(category)}/`} class="badge">{category}</a>
+  </small>
+  <a href={url} aria-hidden="true" tabindex="-1">
+  </a>
+  <div class="content">
+    <div>
+      <Tag class="h3">
+        <a href={url} class="font-black text-lg">{title}</a>
+      </Tag>
+      <small>
+        by <a href={`/author/${slugify(author)}/`}>{author}</a> • {
+          formatDate(date)
+        }
+      </small>
+    </div>
+    <p>{description}</p>
+  </div>
+</article>
