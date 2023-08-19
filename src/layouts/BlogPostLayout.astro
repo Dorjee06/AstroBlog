@@ -1,16 +1,18 @@
 ---
-import MainLayout from "./MainLayout.astro"
+// component import
+import MainLayout from "./MainLayout.astro";
+import PostHeader from "../components/PostHeader.astro";
 
-console.log('test');
 const { frontmatter } = Astro.props;
-console.log(frontmatter);
-
+const { title, description, date, category, author } = frontmatter;
 ---
 
-<MainLayout title="My Blog">
-    <header>
-        <div class="container">
-
-        </div>
-    </header>
+<MainLayout {title} {description}>
+  <PostHeader {title} {description} {date} {category} {author} />
+  <div class="post-content text-white">
+    <div class="content">
+      <slot />
+    </div>
+    <div class="sidebar"></div>
+  </div>
 </MainLayout>
