@@ -10,10 +10,7 @@ const Tag = tagType;
 const { title, date, author, description, category } = frontmatter;
 ---
 
-<article class="card  my-12 flex flex-col items-center gap-2 my-5 w-3/4">
-  <small>
-    <a href={`/category/${slugify(category)}/`} class="badge">{category}</a>
-  </small>
+<article class="card  my-12 flex flex-col items-center gap-7 my-5 w-3/4">
   <a href={url} aria-hidden="true" tabindex="-1">
   </a>
   <div class="content">
