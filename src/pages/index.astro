@@ -1,18 +1,22 @@
 ---
-import Bio from "../component/Bio.astro"
----
+import Bio from "../components/Bio.astro"
+import MainLayout from "../layouts/MainLayout.astro";
+import PostCard from "../components/PostCard.astro"
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="bg-gray-900">
-		<div class="flex flex-col bg-gray-900 mt-32 font-sans">
-			<Bio />
+const allPosts = await Astro.glob("./posts/*.md")
+
+---
+<MainLayout>
+	<div class="flex flex-col bg-gray-900 mt-32 font-sans">
+		<Bio />
+		<div>
+				{
+					allPosts.map((post => <PostCard
+            frontmatter={post.frontmatter}
+            url={post.url}
+            tagType="h2"
+          />))
+				}
 		</div>
-	</body>
-</html>
+	</div>
+</MainLayout>
