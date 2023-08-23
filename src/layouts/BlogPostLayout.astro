@@ -4,11 +4,11 @@ import MainLayout from "./MainLayout.astro";
 import PostHeader from "../components/PostHeader.astro";
 
 const { frontmatter } = Astro.props;
-const { title, description, date, category, author } = frontmatter;
+const { title, description, date } = frontmatter;
 ---
 
 <MainLayout {title} {description}>
-  <PostHeader {title} {description} {date} {category} {author} />
+  <PostHeader {title} {description} {date} />
   <div class="post-content text-white">
     <div class="content">
       <slot />

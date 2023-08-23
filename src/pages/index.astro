@@ -2,6 +2,7 @@
 import Bio from "../components/Bio.astro"
 import MainLayout from "../layouts/MainLayout.astro";
 import PostCard from "../components/PostCard.astro"
+import { Icon } from 'astro-icon'
 
 const allPosts = await Astro.glob("./posts/*.md")
 
@@ -10,6 +11,8 @@ const allPosts = await Astro.glob("./posts/*.md")
 	<div class="flex flex-col bg-gray-900 mt-32 font-sans">
 		<Bio />
 		<div>
+			<img src="https://imgs.search.brave.com/6ivsOHZStY0b-8HBrDilK6Jpu8weIEhMjMfbErBXl5o/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pY29u/c3BsYWNlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvX2ljb25z/L2ZmZmZmZi8yNTYv/cG5nL3NhdmUtaWNv/bi0xOC0yNTYucG5n" class="w-5 inline ml-32 mr-3">
+				<span class="font-bold space-x-32">{allPosts.length} Posts</span>
 				{
 					allPosts.map((post => <PostCard
             frontmatter={post.frontmatter}
