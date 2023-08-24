@@ -9,6 +9,20 @@ const Tag = tagType;
 
 const { title, date, description } = frontmatter;
 ---
+<style>
+  .hover-effect {
+    transition: border-color 1s;
+  }
+
+  .hover-effect:hover {
+    border-bottom: solid white;
+  }
+
+  .hover-effect:hover::before {
+    width: 100%;
+  }
+</style>
+
 
 <article class="card  my-12 flex flex-col space-x-32">
   <a href={url} aria-hidden="true" tabindex="-1">
@@ -16,7 +30,7 @@ const { title, date, description } = frontmatter;
   <div class="content">
     <div>
       <Tag class="h3">
-        <a href={url} class="font-black text-lg">{title}</a>
+        <a href={url} class="hover-effect font-black text-lg">{title}</a>
       </Tag>
       <small>
         {
