@@ -4,13 +4,14 @@
 // utils imports
 import { slugify, formatDate } from "../js/utils";
 
-const { title, date} = Astro.props;
+const { title, date, description} = Astro.props;
 ---
 
 <header>
   <div class="container flex flex-col justify-center items-center">
-    <h1 class="h2">{title}</h1>
-    <p>
+    <h1 class="text-5xl text-center mb-4">{title}</h1>
+    <p class="text-lg text-gray-200 mb-4">"{description}"</p>
+    <p class="text-lg text-gray-400">
       {
         formatDate(date)
       }
