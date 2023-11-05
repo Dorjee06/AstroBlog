@@ -8,7 +8,7 @@ const { title, description, date } = frontmatter;
 ---
 
 <MainLayout {title} {description}>
-  <PostHeader {title} {description} {date}/>
+  <PostHeader {title} {description} {date} class="text-5xl"/>
   <div class="post-content text-white w-1/2 m-auto text-3xl">
     <div class="content">
       <slot />
