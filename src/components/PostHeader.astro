@@ -8,10 +8,10 @@ const { title, date, description} = Astro.props;
 ---
 
 <header>
-  <div class="container flex flex-col justify-center items-center">
-    <h1 class="text-5xl text-center mb-4">{title}</h1>
-    <p class="text-lg text-gray-200 mb-4">"{description}"</p>
-    <p class="text-lg text-gray-400">
+  <div class="container flex flex-col justify-center items-center my-12">
+    <h1 class="text-5xl text-center mb-4 font-bold">{title}</h1>
+    <p class="text-lg text-gray-200 font-semibold mb-4">"{description}"</p>
+    <p class="text-lg text-gray-200 font-medium">
       {
         formatDate(date)
       }
